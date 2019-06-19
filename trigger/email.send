@@ -1,0 +1,15 @@
+trigger ExampleTrigger on Contact (after insert, after delete) {
+    if (Trigger.isinsert)
+    {
+        integer recount= Trigger.new.size();
+        EmailManager.sendMail('789shubhammca@gmail.com', 'trailhead', 
+                              recount + ' contact(s) were inserted.');
+        system.debug(recount);
+    
+    }
+    else if(Trigger.isdelete)
+    {
+        
+    }
+
+}
