@@ -1,0 +1,10 @@
+trigger res on Account (before insert) {
+    for(Account s:trigger.new ){
+        if(s.gender__c =='male'){
+            s.name='Mr. '+ s.Name;
+        }
+        if(s.gender__c=='female'){
+            s.name='Miss. '+s.Name;
+        }
+        
+    }
